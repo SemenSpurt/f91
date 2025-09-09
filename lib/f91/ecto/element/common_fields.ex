@@ -1,4 +1,4 @@
-defmodule F91.Element.CommonFields do
+defmodule F91.Ecto.Element.CommonFields do
   use Ecto.Schema
   import Ecto.Changeset
 

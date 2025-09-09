@@ -6,16 +6,17 @@ defmodule F91.Ecto.Directory do
   @foreign_key_type :binary_id
   schema "directories" do
     field :title, :string
+    field :description, :string
 
     has_many :projects, F91.Ecto.Project
 
-    timestamps(type: :utc_datetime)
+    timestamps()
   end
 
   @doc false
   def changeset(directory, attrs) do
     directory
-    |> cast(attrs, [:title])
+    |> cast(attrs, [:title, :description])
     |> validate_required([:title])
   end
 end

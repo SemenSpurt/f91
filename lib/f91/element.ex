@@ -6,7 +6,7 @@ defmodule F91.Element do
   import Ecto.Query, warn: false
   alias F91.Repo
 
-  alias F91.Element.CommonFields
+  alias F91.Ecto.Element.CommonFields
 
   @doc """
   Returns the list of common_fields.
@@ -102,7 +102,7 @@ defmodule F91.Element do
     CommonFields.changeset(common_fields, attrs)
   end
 
-  alias F91.Element.Frame
+  alias F91.Ecto.Element.Frame
 
   @doc """
   Returns the list of frames.

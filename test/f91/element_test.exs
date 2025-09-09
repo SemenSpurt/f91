@@ -4,7 +4,7 @@ defmodule F91.ElementTest do
   alias F91.Element
 
   describe "common_fields" do
-    alias F91.Element.CommonFields
+    alias F91.Ecto.Element.CommonFields
 
     import F91.ElementFixtures
 
@@ -72,7 +72,7 @@ defmodule F91.ElementTest do
   end
 
   describe "frames" do
-    alias F91.Element.Frame
+    alias F91.Ecto.Element.Frame
 
     import F91.ElementFixtures
 

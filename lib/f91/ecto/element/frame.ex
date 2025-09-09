@@ -1,4 +1,4 @@
-defmodule F91.Element.Frame do
+defmodule F91.Ecto.Element.Frame do
   use Ecto.Schema
   import Ecto.Changeset
 
