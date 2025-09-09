@@ -3,10 +3,14 @@ defmodule F91Web.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug F91Web.Plugs.AbsintheContext
+    plug F91Web.Plugs.Locale, gettext: F91Web.Gettext
   end
 
-  scope "/api", F91Web do
+  scope "/api" do
     pipe_through :api
+    forward "/graphql/editor", Absinthe.Plug.GraphiQL, schema: F91Web.GraphQL.Schema
+    forward "/graphql", Absinthe.Plug, schema: F91Web.GraphQL.Schema
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
